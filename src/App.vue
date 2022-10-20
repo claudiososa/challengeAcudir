@@ -1,32 +1,50 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+
+    <v-row>
+      <v-col cols="12" class="d-flex justify-end">
+        <v-switch label="Modo Oscuro" v-model="modeDark"></v-switch>
+      </v-col>
+    </v-row>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
+<script>
+
+export default {
+  name: 'App',
+
+  data: () => ({
+    modeDark: true,
+  }),
+  mounted(){
+    this.$vuetify.theme.dark = this.$store.state.modeDark
+    this.modeDark = this.$store.state.modeDark
+  },
+  watch: {
+    modeDark: {
+      immediate: false,
+      handler() {
+        console.log('watch..');
+        this.$store.dispatch('changeModeDark')
+        this.$vuetify.theme.dark = this.$store.state.modeDark
+      },
+    },
+  },
+  methods: {
+
+  }
+};
+</script>
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  background: url('https://ohlaladani.com.br/wp-content/uploads/wallpaper-OHLALADANI_DESKTOP_WALLPAPERS_AVENTURA-2.jpg')
+    no-repeat center center fixed !important;
+  background-size: cover;
 }
 
-nav {
-  padding: 30px;
-}
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
