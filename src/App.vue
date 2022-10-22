@@ -1,13 +1,35 @@
 <template>
-  <v-app>
+   <v-app id="inspire" class="pa-0 ma-0">
+    <v-app-bar
+      app
+      color="warning"
+    >
+    <v-toolbar-title>ACUDIR Actividades</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn
+            v-if="$store.state.login.userActive"
+            color="black accent-4"
+            text
+        >
+            <span> Usuario: {{ $store.state.login.userActive.username}}</span>
 
-    <v-row>
-      <v-col cols="12" class="d-flex justify-end">
-        <v-switch label="Modo Oscuro" v-model="modeDark"></v-switch>
-      </v-col>
-    </v-row>
+            <v-icon>mdi-account</v-icon>
+        </v-btn>
+        <v-btn
+            v-if="$store.state.login.userActive"
+            @click="closeSession"
+            color="black accent-4"
+            text
+        >
+            <span>Salir</span>
+
+            <v-icon>mdi-location-exit</v-icon>
+        </v-btn>
+
+       <!-- <v-switch color="black" class="pt-4" label="Modo Oscuro" v-model="modeDark"></v-switch> -->
+    </v-app-bar>
     <v-main>
-      <router-view/>
+        <router-view/>
     </v-main>
   </v-app>
 </template>
@@ -35,15 +57,21 @@ export default {
     },
   },
   methods: {
-
+    closeSession(){
+        this.$store.dispatch('login/closeSession')
+        this.$router.push({
+            path: '/'
+        })
+    }
   }
 };
 </script>
 <style>
-#app {
+#inspire {
   background: url('https://ohlaladani.com.br/wp-content/uploads/wallpaper-OHLALADANI_DESKTOP_WALLPAPERS_AVENTURA-2.jpg')
     no-repeat center center fixed !important;
   background-size: cover;
+  background-color: darkslateblue;
 }
 
 
