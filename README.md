@@ -16,6 +16,7 @@ npm run build
 
 
 ### Usar Demo en:
-Demo [Configuration Reference](https://acudir-challenge.vicomser.com/)
+Demo [aqui](acudir-challenge.vicomser.com)
+
 ```
 
