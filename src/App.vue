@@ -1,13 +1,15 @@
 <template>
-  <v-app>
-
-    <v-row>
-      <v-col cols="12" class="d-flex justify-end">
-        <v-switch label="Modo Oscuro" v-model="modeDark"></v-switch>
-      </v-col>
-    </v-row>
+   <v-app id="inspire" class="pa-0 ma-0">
+    <v-app-bar
+      app
+      color="warning"
+    >
+    <v-toolbar-title>ACUDIR Actividades</v-toolbar-title>
+        <v-spacer></v-spacer>
+       <v-switch color="black" class="pt-4" label="Modo Oscuro" v-model="modeDark"></v-switch>
+    </v-app-bar>
     <v-main>
-      <router-view/>
+        <router-view/>
     </v-main>
   </v-app>
 </template>
@@ -40,10 +42,11 @@ export default {
 };
 </script>
 <style>
-#app {
+#inspire {
   background: url('https://ohlaladani.com.br/wp-content/uploads/wallpaper-OHLALADANI_DESKTOP_WALLPAPERS_AVENTURA-2.jpg')
     no-repeat center center fixed !important;
   background-size: cover;
+  background-color: darkslateblue;
 }
 
 

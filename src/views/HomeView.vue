@@ -1,5 +1,7 @@
 <template>
-  <start-session />
+    <v-container class="d-flex justify-center align-center mt-8">
+        <start-session />
+    </v-container>
 </template>
 
 <script>
