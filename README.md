@@ -1,4 +1,4 @@
-# acudir-challenge
+# Acudir-challenge
 
 ## Project setup
 ```
@@ -13,12 +13,9 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+
+
+### Usar Demo en:
+Demo [Configuration Reference](https://acudir-challenge.vicomser.com/)
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
