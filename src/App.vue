@@ -6,7 +6,27 @@
     >
     <v-toolbar-title>ACUDIR Actividades</v-toolbar-title>
         <v-spacer></v-spacer>
-       <v-switch color="black" class="pt-4" label="Modo Oscuro" v-model="modeDark"></v-switch>
+        <v-btn
+            v-if="$store.state.login.userActive"
+            color="black accent-4"
+            text
+        >
+            <span> Usuario: {{ $store.state.login.userActive.username}}</span>
+
+            <v-icon>mdi-account</v-icon>
+        </v-btn>
+        <v-btn
+            v-if="$store.state.login.userActive"
+            @click="closeSession"
+            color="black accent-4"
+            text
+        >
+            <span>Salir</span>
+
+            <v-icon>mdi-location-exit</v-icon>
+        </v-btn>
+
+       <!-- <v-switch color="black" class="pt-4" label="Modo Oscuro" v-model="modeDark"></v-switch> -->
     </v-app-bar>
     <v-main>
         <router-view/>
@@ -37,7 +57,12 @@ export default {
     },
   },
   methods: {
-
+    closeSession(){
+        this.$store.dispatch('login/closeSession')
+        this.$router.push({
+            path: '/'
+        })
+    }
   }
 };
 </script>

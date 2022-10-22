@@ -9,13 +9,17 @@
                     <v-col cols="12"><span class="mr-3"><strong>Actividad: </strong>{{ item.activity}}</span></v-col>
                     <v-col cols="12"><span class="mr-3"><strong>Participantes: </strong> {{ item.participants}} </span></v-col>
                     <v-col cols="12"><span class="mr-3"><strong>Tipo: </strong>{{ item.type}} </span></v-col>
-                    <v-col cols="12" v-if="item.new"><span class="white--text mr-3 text-h6" ><strong>Actividad Agregada</strong></span></v-col>
-                    <v-col cols="12" v-if="item.duplicate"><span class="red--text mr-3 text-h6" ><strong>Ya existe. No puede ser Agregada</strong></span></v-col>
+                    <v-col cols="12" v-if="item.new">
+                        <v-alert class="warning"><strong>Actividad Agregada</strong></v-alert>
+                    </v-col>
+                    <v-col v-if="item.duplicate">
+                        <v-alert   class="red"><strong>Ya existe. No puede ser Agregada</strong></v-alert>
+                    </v-col>
                 </v-row>
             </v-col>
 
             <v-col cols="12" v-else class="d-flex justify-start">
-                No hay actividad seleccionada
+                    No hay actividad seleccionada
             </v-col>
         </v-row>
     </v-container>

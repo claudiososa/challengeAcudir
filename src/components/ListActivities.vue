@@ -110,7 +110,6 @@ export default {
 
     methods: {
         showItem(item){
-            console.log('item.enviado', item);
             this.$emit('showItem', item)
         },
         deleteItem(item){

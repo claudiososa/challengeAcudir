@@ -42,9 +42,15 @@
             itemSelected:{},
         }
       },
+      mounted(){
+        if(!this.$store.state.login.userActive){
+            this.$router.push({
+                path:'/'
+            })
+        }
+      },
       methods: {
         showItem(item){
-            console.log('from list', item);
             this.itemSelected = item
         },
       }

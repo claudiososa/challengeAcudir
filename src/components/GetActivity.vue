@@ -18,7 +18,7 @@ export default {
     methods: {
         async getData(){
             try {
-                const res = await this.$http.get('https://www.boredapi.com/api/activity')
+                const res = await this.$http.get(`${process.env.VUE_APP_URL_ACTIVITIES}`)
 
                 if(res.statusText === 'OK'){
                     const findItem2 = this.$store.state.activities.data.find( e => e.key === res.data.key);

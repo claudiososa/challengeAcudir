@@ -1,18 +1,24 @@
 <template>
   <v-container class="mt-8">
         <v-form ref="formLogin">
-            <v-row class="d-flex flex-column justify-center align-center">
-
+            <v-row v-if="$store.state.login.userActive">
+                <v-col  cols="12" md="4" class="d-flex flex-column justify-center align-center row-container px-4">
+                    Ya se encuentra Logueado.!<br>
+                    <strong> Usuario: {{ $store.state.login.userActive.username }}</strong>
+                    <a @click="goActivities" target="_blank" rel="noopener noreferrer" style="text-decoration: none">Ir a Actividades</a>
+                </v-col>
+            </v-row>
+            <v-row  v-else class="d-flex flex-column justify-center align-center">
                 <v-col cols="12" md="4" class="d-flex flex-column justify-center align-center row-container px-4">
                     <img :src="logo" width="300" alt="logo_acudir" >
                 </v-col>
                 <v-col cols="12" md="4" class="d-flex flex-column justify-center row-container px-6">
 
-                    <v-label>Usuario</v-label>
+
                     <v-text-field
                     type="text"
                     dense
-                    label=""
+                    label="Usuario"
                     :background-color="(!isDark) ? 'white' : 'grey'"
                     append-icon="mdi-account"
                     outlined
@@ -21,10 +27,11 @@
                     >
                     </v-text-field>
 
-                    <v-label>Contrasena</v-label>
+
                     <v-text-field
                     type="password"
-                    label=""
+                    autocomplete
+                    label="Contraseña"
                     dense
                     append-icon="mdi-lock"
                     outlined
@@ -73,6 +80,11 @@ export default {
   },
 
   methods: {
+    goActivities(){
+        this.$router.push({
+            path:'/activities'
+        })
+    },
     validForm(){
         if (this.$refs.formLogin.validate()) {
             this.login()
@@ -82,7 +94,6 @@ export default {
     },
     login(){
         this.$store.dispatch('login/login', this.formLogin)
-        console.log('llegue a login');
     }
   },
 };

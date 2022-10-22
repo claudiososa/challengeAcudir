@@ -13,6 +13,9 @@ const state = {
 };
 
 const mutations = {
+    closeSession: (state, data) => {
+        state.userActive = null
+    },
     login: (state, data) => {
         const userLoginIn = state.users.find( e => e.username === data.username && e.password === data.password);
 
@@ -31,6 +34,9 @@ const mutations = {
 const actions = {
     login: (context, data) => {
         context.commit('login', data)
+    },
+    closeSession: (context, data) => {
+        context.commit('closeSession')
     }
 };
 export default {
