@@ -25,6 +25,9 @@ export default {
 
                     if(!findItem2){
                         this.$store.dispatch('activities/addActivity', res.data)
+
+                        //Agrego prop new como true, dato que el componente viewDetail utiliza
+                        // para mostrar mensaje como una nueva Actividad
                         const newItem = {
                                 ...res.data,
                                 new: true

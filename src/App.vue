@@ -25,8 +25,6 @@
 
             <v-icon>mdi-location-exit</v-icon>
         </v-btn>
-
-       <!-- <v-switch color="black" class="pt-4" label="Modo Oscuro" v-model="modeDark"></v-switch> -->
     </v-app-bar>
     <v-main>
         <router-view/>
