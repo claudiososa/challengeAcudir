@@ -109,6 +109,8 @@ export default {
     },
 
     methods: {
+
+        //Envio dato que va utilziar el componente viewDetail
         showItem(item){
             this.$emit('showItem', item)
         },
@@ -116,6 +118,8 @@ export default {
             this.dialog = true
             this.itemSelected = item
         },
+
+        //quita item seleccionado (actividad) del store y cierro modal
         actionRemoveItem(){
             this.$emit('showItem', {})
             this.$store.dispatch('activities/removeItem', this.itemSelected)

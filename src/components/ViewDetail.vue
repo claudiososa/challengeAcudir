@@ -6,9 +6,15 @@
                     <v-col cols="12" v-if="item.activity">
                         <strong>Detalle de la Actividad</strong>
                     </v-col>
-                    <v-col cols="12"><span class="mr-3"><strong>Actividad: </strong>{{ item.activity}}</span></v-col>
-                    <v-col cols="12"><span class="mr-3"><strong>Participantes: </strong> {{ item.participants}} </span></v-col>
-                    <v-col cols="12"><span class="mr-3"><strong>Tipo: </strong>{{ item.type}} </span></v-col>
+                    <v-col cols="12">
+                        <span class="mr-3"><strong>Actividad: </strong>{{ item.activity}}</span>
+                    </v-col>
+                    <v-col cols="12">
+                        <span class="mr-3"><strong>Participantes: </strong> {{ item.participants}} </span>
+                    </v-col>
+                    <v-col cols="12">
+                        <span class="mr-3"><strong>Tipo: </strong>{{ item.type}} </span>
+                    </v-col>
                     <v-col cols="12" v-if="item.new">
                         <v-alert class="warning"><strong>Actividad Agregada</strong></v-alert>
                     </v-col>

@@ -12,8 +12,9 @@
                 <v-col cols="12" md="4" class="d-flex flex-column justify-center align-center row-container px-4">
                     <img :src="logo" width="300" alt="logo_acudir" >
                 </v-col>
-                <v-col cols="12" md="4" class="d-flex flex-column justify-center row-container px-6">
 
+                <!-- Inputs Usuario y password -->
+                <v-col cols="12" md="4" class="d-flex flex-column justify-center row-container px-6">
 
                     <v-text-field
                     type="text"
@@ -27,7 +28,6 @@
                     >
                     </v-text-field>
 
-
                     <v-text-field
                     type="password"
                     autocomplete
@@ -40,6 +40,8 @@
                     v-model="formLogin.password">
                     </v-text-field>
                 </v-col>
+
+                <!-- Button Ingresar -->
                 <v-col cols="12" md="4" class="d-flex flex-column justify-center">
                     <v-btn medium @click="validForm">Ingresar</v-btn>
             </v-col>
@@ -80,6 +82,8 @@ export default {
   },
 
   methods: {
+
+    // redireccion a la vista  ActivitiesView
     goActivities(){
         this.$router.push({
             path:'/activities'
@@ -89,9 +93,9 @@ export default {
         if (this.$refs.formLogin.validate()) {
             this.login()
         }
-
-
     },
+
+    //Envio datos para procesar el login
     login(){
         this.$store.dispatch('login/login', this.formLogin)
     }
