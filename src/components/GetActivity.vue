@@ -1,7 +1,7 @@
 <template>
     <v-btn
         @click="getData"
-        color="warning">
+        color="primary">
             Generar Nueva Actividad
         </v-btn>
 </template>

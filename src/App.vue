@@ -2,7 +2,7 @@
    <v-app id="inspire" class="pa-0 ma-0">
     <v-app-bar
       app
-      color="warning"
+      color="primary"
     >
     <v-toolbar-title>ACUDIR Actividades</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -50,7 +50,6 @@ export default {
     modeDark: {
       immediate: false,
       handler() {
-        console.log('watch..');
         this.$store.dispatch('changeModeDark')
         this.$vuetify.theme.dark = this.$store.state.modeDark
       },
@@ -68,10 +67,7 @@ export default {
 </script>
 <style>
 #inspire {
-  background: url('https://ohlaladani.com.br/wp-content/uploads/wallpaper-OHLALADANI_DESKTOP_WALLPAPERS_AVENTURA-2.jpg')
-    no-repeat center center fixed !important;
   background-size: cover;
-  background-color: darkslateblue;
 }
 
 

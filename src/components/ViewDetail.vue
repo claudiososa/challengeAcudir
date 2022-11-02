@@ -10,7 +10,7 @@
                     <v-col cols="12"><span class="mr-3"><strong>Participantes: </strong> {{ item.participants}} </span></v-col>
                     <v-col cols="12"><span class="mr-3"><strong>Tipo: </strong>{{ item.type}} </span></v-col>
                     <v-col cols="12" v-if="item.new">
-                        <v-alert class="warning"><strong>Actividad Agregada</strong></v-alert>
+                        <v-alert class="primary"><strong>Actividad Agregada</strong></v-alert>
                     </v-col>
                     <v-col v-if="item.duplicate">
                         <v-alert   class="red"><strong>Ya existe. No puede ser Agregada</strong></v-alert>

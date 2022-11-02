@@ -100,7 +100,6 @@ export default {
 </script>
 
 <style scoped>
-
   .row-container {
     background-color: rgb(180, 192, 192);
   }
