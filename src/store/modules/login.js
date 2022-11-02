@@ -1,6 +1,5 @@
 import router from '../../router'
 
-
 const getters = {};
 
 const state = {

@@ -22,5 +22,4 @@ export default new Vuex.Store({
     }
   },
   modules: { login, activities },
-  //plugins: [createPersistedState()],
 })

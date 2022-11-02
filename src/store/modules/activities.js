@@ -29,14 +29,3 @@ export default {
   actions,
   mutations,
 };
-
-
-// {
-//     "activity": "Look at pictures and videos of cute animals",
-//     "type": "relaxation",
-//     "participants": 1,
-//     "price": 0,
-//     "link": "",
-//     "key": "2565076",
-//     "accessibility": 1
-// }
