@@ -4,9 +4,9 @@ const getters = {};
 
 const state = {
     users:[
-        {id: 1, username:'admin', password:'acudir1234'},
-        {id: 2, username:'claudio', password:'acudir1234'},
-        {id: 3, username:'julio', password:'acudir1234'},
+        {id: 1, username:'admin', password:'12345678'},
+        {id: 2, username:'claudio', password:'12345678'},
+        {id: 3, username:'julio', password:'12345678'},
     ],
     userActive: null
 };
